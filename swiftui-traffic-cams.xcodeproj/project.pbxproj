@@ -15,6 +15,7 @@
 		EE89E33923F6AC3400BEB6C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE89E33723F6AC3400BEB6C3 /* LaunchScreen.storyboard */; };
 		EE89E34423F6AC3400BEB6C3 /* swiftui_traffic_camsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E34323F6AC3400BEB6C3 /* swiftui_traffic_camsTests.swift */; };
 		EE89E34F23F6AC3400BEB6C3 /* swiftui_traffic_camsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E34E23F6AC3400BEB6C3 /* swiftui_traffic_camsUITests.swift */; };
+		EE89E35D23F6AEBE00BEB6C3 /* CameraData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E35C23F6AEBE00BEB6C3 /* CameraData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		EE89E34A23F6AC3400BEB6C3 /* swiftui-traffic-camsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-traffic-camsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE89E34E23F6AC3400BEB6C3 /* swiftui_traffic_camsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_traffic_camsUITests.swift; sourceTree = "<group>"; };
 		EE89E35023F6AC3400BEB6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE89E35C23F6AEBE00BEB6C3 /* CameraData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				EE89E33723F6AC3400BEB6C3 /* LaunchScreen.storyboard */,
 				EE89E33A23F6AC3400BEB6C3 /* Info.plist */,
 				EE89E33423F6AC3400BEB6C3 /* Preview Content */,
+				EE89E35C23F6AEBE00BEB6C3 /* CameraData.swift */,
 			);
 			path = "swiftui-traffic-cams";
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			files = (
 				EE89E32D23F6AC3300BEB6C3 /* AppDelegate.swift in Sources */,
 				EE89E32F23F6AC3300BEB6C3 /* SceneDelegate.swift in Sources */,
+				EE89E35D23F6AEBE00BEB6C3 /* CameraData.swift in Sources */,
 				EE89E33123F6AC3300BEB6C3 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
