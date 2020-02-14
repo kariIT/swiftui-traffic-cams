@@ -9,20 +9,20 @@
 import SwiftUI
 import Foundation
 
-struct CameraData {
+struct CameraData: Codable {
     var id: Int?
     var cameraUpdatedTime: String?
     var cameraStations: [CameraStation]?
 }
 
-struct CameraStation {
-    var id: Int?
+struct CameraStation: Codable {
+    var id: String?
     var roadStationId: Int?
     var nearestWeatherStationId: Int?
     var cameraPresets: [CameraPreset]?
 }
 
-struct CameraPreset {
+struct CameraPreset: Codable {
     var id: String?
     var presentationName: String?
     var imageUrl: String?
