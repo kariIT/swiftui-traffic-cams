@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE89E32D23F6AC3300BEB6C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E32C23F6AC3300BEB6C3 /* AppDelegate.swift */; };
+		EE89E32F23F6AC3300BEB6C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E32E23F6AC3300BEB6C3 /* SceneDelegate.swift */; };
+		EE89E33123F6AC3300BEB6C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E33023F6AC3300BEB6C3 /* ContentView.swift */; };
+		EE89E33323F6AC3400BEB6C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE89E33223F6AC3400BEB6C3 /* Assets.xcassets */; };
+		EE89E33623F6AC3400BEB6C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE89E33523F6AC3400BEB6C3 /* Preview Assets.xcassets */; };
+		EE89E33923F6AC3400BEB6C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE89E33723F6AC3400BEB6C3 /* LaunchScreen.storyboard */; };
+		EE89E34423F6AC3400BEB6C3 /* swiftui_traffic_camsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E34323F6AC3400BEB6C3 /* swiftui_traffic_camsTests.swift */; };
+		EE89E34F23F6AC3400BEB6C3 /* swiftui_traffic_camsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E34E23F6AC3400BEB6C3 /* swiftui_traffic_camsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE89E34023F6AC3400BEB6C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE89E32123F6AC3300BEB6C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE89E32823F6AC3300BEB6C3;
+			remoteInfo = "swiftui-traffic-cams";
+		};
+		EE89E34B23F6AC3400BEB6C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE89E32123F6AC3300BEB6C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE89E32823F6AC3300BEB6C3;
+			remoteInfo = "swiftui-traffic-cams";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EE89E32923F6AC3300BEB6C3 /* swiftui-traffic-cams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftui-traffic-cams.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE89E32C23F6AC3300BEB6C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE89E32E23F6AC3300BEB6C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EE89E33023F6AC3300BEB6C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EE89E33223F6AC3400BEB6C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE89E33523F6AC3400BEB6C3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EE89E33823F6AC3400BEB6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE89E33A23F6AC3400BEB6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE89E33F23F6AC3400BEB6C3 /* swiftui-traffic-camsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-traffic-camsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE89E34323F6AC3400BEB6C3 /* swiftui_traffic_camsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_traffic_camsTests.swift; sourceTree = "<group>"; };
+		EE89E34523F6AC3400BEB6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE89E34A23F6AC3400BEB6C3 /* swiftui-traffic-camsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-traffic-camsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE89E34E23F6AC3400BEB6C3 /* swiftui_traffic_camsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_traffic_camsUITests.swift; sourceTree = "<group>"; };
+		EE89E35023F6AC3400BEB6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE89E32623F6AC3300BEB6C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE89E33C23F6AC3400BEB6C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE89E34723F6AC3400BEB6C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE89E32023F6AC3300BEB6C3 = {
+			isa = PBXGroup;
+			children = (
+				EE89E32B23F6AC3300BEB6C3 /* swiftui-traffic-cams */,
+				EE89E34223F6AC3400BEB6C3 /* swiftui-traffic-camsTests */,
+				EE89E34D23F6AC3400BEB6C3 /* swiftui-traffic-camsUITests */,
+				EE89E32A23F6AC3300BEB6C3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE89E32A23F6AC3300BEB6C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE89E32923F6AC3300BEB6C3 /* swiftui-traffic-cams.app */,
+				EE89E33F23F6AC3400BEB6C3 /* swiftui-traffic-camsTests.xctest */,
+				EE89E34A23F6AC3400BEB6C3 /* swiftui-traffic-camsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE89E32B23F6AC3300BEB6C3 /* swiftui-traffic-cams */ = {
+			isa = PBXGroup;
+			children = (
+				EE89E32C23F6AC3300BEB6C3 /* AppDelegate.swift */,
+				EE89E32E23F6AC3300BEB6C3 /* SceneDelegate.swift */,
+				EE89E33023F6AC3300BEB6C3 /* ContentView.swift */,
+				EE89E33223F6AC3400BEB6C3 /* Assets.xcassets */,
+				EE89E33723F6AC3400BEB6C3 /* LaunchScreen.storyboard */,
+				EE89E33A23F6AC3400BEB6C3 /* Info.plist */,
+				EE89E33423F6AC3400BEB6C3 /* Preview Content */,
+			);
+			path = "swiftui-traffic-cams";
+			sourceTree = "<group>";
+		};
+		EE89E33423F6AC3400BEB6C3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EE89E33523F6AC3400BEB6C3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EE89E34223F6AC3400BEB6C3 /* swiftui-traffic-camsTests */ = {
+			isa = PBXGroup;
+			children = (
+				EE89E34323F6AC3400BEB6C3 /* swiftui_traffic_camsTests.swift */,
+				EE89E34523F6AC3400BEB6C3 /* Info.plist */,
+			);
+			path = "swiftui-traffic-camsTests";
+			sourceTree = "<group>";
+		};
+		EE89E34D23F6AC3400BEB6C3 /* swiftui-traffic-camsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EE89E34E23F6AC3400BEB6C3 /* swiftui_traffic_camsUITests.swift */,
+				EE89E35023F6AC3400BEB6C3 /* Info.plist */,
+			);
+			path = "swiftui-traffic-camsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE89E32823F6AC3300BEB6C3 /* swiftui-traffic-cams */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE89E35323F6AC3400BEB6C3 /* Build configuration list for PBXNativeTarget "swiftui-traffic-cams" */;
+			buildPhases = (
+				EE89E32523F6AC3300BEB6C3 /* Sources */,
+				EE89E32623F6AC3300BEB6C3 /* Frameworks */,
+				EE89E32723F6AC3300BEB6C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "swiftui-traffic-cams";
+			productName = "swiftui-traffic-cams";
+			productReference = EE89E32923F6AC3300BEB6C3 /* swiftui-traffic-cams.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE89E33E23F6AC3400BEB6C3 /* swiftui-traffic-camsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE89E35623F6AC3400BEB6C3 /* Build configuration list for PBXNativeTarget "swiftui-traffic-camsTests" */;
+			buildPhases = (
+				EE89E33B23F6AC3400BEB6C3 /* Sources */,
+				EE89E33C23F6AC3400BEB6C3 /* Frameworks */,
+				EE89E33D23F6AC3400BEB6C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE89E34123F6AC3400BEB6C3 /* PBXTargetDependency */,
+			);
+			name = "swiftui-traffic-camsTests";
+			productName = "swiftui-traffic-camsTests";
+			productReference = EE89E33F23F6AC3400BEB6C3 /* swiftui-traffic-camsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EE89E34923F6AC3400BEB6C3 /* swiftui-traffic-camsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE89E35923F6AC3400BEB6C3 /* Build configuration list for PBXNativeTarget "swiftui-traffic-camsUITests" */;
+			buildPhases = (
+				EE89E34623F6AC3400BEB6C3 /* Sources */,
+				EE89E34723F6AC3400BEB6C3 /* Frameworks */,
+				EE89E34823F6AC3400BEB6C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE89E34C23F6AC3400BEB6C3 /* PBXTargetDependency */,
+			);
+			name = "swiftui-traffic-camsUITests";
+			productName = "swiftui-traffic-camsUITests";
+			productReference = EE89E34A23F6AC3400BEB6C3 /* swiftui-traffic-camsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE89E32123F6AC3300BEB6C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Joona Heinikari";
+				TargetAttributes = {
+					EE89E32823F6AC3300BEB6C3 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					EE89E33E23F6AC3400BEB6C3 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = EE89E32823F6AC3300BEB6C3;
+					};
+					EE89E34923F6AC3400BEB6C3 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = EE89E32823F6AC3300BEB6C3;
+					};
+				};
+			};
+			buildConfigurationList = EE89E32423F6AC3300BEB6C3 /* Build configuration list for PBXProject "swiftui-traffic-cams" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE89E32023F6AC3300BEB6C3;
+			productRefGroup = EE89E32A23F6AC3300BEB6C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE89E32823F6AC3300BEB6C3 /* swiftui-traffic-cams */,
+				EE89E33E23F6AC3400BEB6C3 /* swiftui-traffic-camsTests */,
+				EE89E34923F6AC3400BEB6C3 /* swiftui-traffic-camsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE89E32723F6AC3300BEB6C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE89E33923F6AC3400BEB6C3 /* LaunchScreen.storyboard in Resources */,
+				EE89E33623F6AC3400BEB6C3 /* Preview Assets.xcassets in Resources */,
+				EE89E33323F6AC3400BEB6C3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE89E33D23F6AC3400BEB6C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE89E34823F6AC3400BEB6C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE89E32523F6AC3300BEB6C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE89E32D23F6AC3300BEB6C3 /* AppDelegate.swift in Sources */,
+				EE89E32F23F6AC3300BEB6C3 /* SceneDelegate.swift in Sources */,
+				EE89E33123F6AC3300BEB6C3 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE89E33B23F6AC3400BEB6C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE89E34423F6AC3400BEB6C3 /* swiftui_traffic_camsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE89E34623F6AC3400BEB6C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE89E34F23F6AC3400BEB6C3 /* swiftui_traffic_camsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE89E34123F6AC3400BEB6C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE89E32823F6AC3300BEB6C3 /* swiftui-traffic-cams */;
+			targetProxy = EE89E34023F6AC3400BEB6C3 /* PBXContainerItemProxy */;
+		};
+		EE89E34C23F6AC3400BEB6C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE89E32823F6AC3300BEB6C3 /* swiftui-traffic-cams */;
+			targetProxy = EE89E34B23F6AC3400BEB6C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EE89E33723F6AC3400BEB6C3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE89E33823F6AC3400BEB6C3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE89E35123F6AC3400BEB6C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EE89E35223F6AC3400BEB6C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE89E35423F6AC3400BEB6C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"swiftui-traffic-cams/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "swiftui-traffic-cams/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "lab.swiftui-traffic-cams";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE89E35523F6AC3400BEB6C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"swiftui-traffic-cams/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "swiftui-traffic-cams/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "lab.swiftui-traffic-cams";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EE89E35723F6AC3400BEB6C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "swiftui-traffic-camsTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "lab.swiftui-traffic-camsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swiftui-traffic-cams.app/swiftui-traffic-cams";
+			};
+			name = Debug;
+		};
+		EE89E35823F6AC3400BEB6C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "swiftui-traffic-camsTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "lab.swiftui-traffic-camsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swiftui-traffic-cams.app/swiftui-traffic-cams";
+			};
+			name = Release;
+		};
+		EE89E35A23F6AC3400BEB6C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "swiftui-traffic-camsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "lab.swiftui-traffic-camsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "swiftui-traffic-cams";
+			};
+			name = Debug;
+		};
+		EE89E35B23F6AC3400BEB6C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "swiftui-traffic-camsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "lab.swiftui-traffic-camsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "swiftui-traffic-cams";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE89E32423F6AC3300BEB6C3 /* Build configuration list for PBXProject "swiftui-traffic-cams" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE89E35123F6AC3400BEB6C3 /* Debug */,
+				EE89E35223F6AC3400BEB6C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE89E35323F6AC3400BEB6C3 /* Build configuration list for PBXNativeTarget "swiftui-traffic-cams" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE89E35423F6AC3400BEB6C3 /* Debug */,
+				EE89E35523F6AC3400BEB6C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE89E35623F6AC3400BEB6C3 /* Build configuration list for PBXNativeTarget "swiftui-traffic-camsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE89E35723F6AC3400BEB6C3 /* Debug */,
+				EE89E35823F6AC3400BEB6C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE89E35923F6AC3400BEB6C3 /* Build configuration list for PBXNativeTarget "swiftui-traffic-camsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE89E35A23F6AC3400BEB6C3 /* Debug */,
+				EE89E35B23F6AC3400BEB6C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE89E32123F6AC3300BEB6C3 /* Project object */;
+}
