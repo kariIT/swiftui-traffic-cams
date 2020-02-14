@@ -6,6 +6,8 @@
 //  Copyright © 2020 Joona Heinikari. All rights reserved.
 //
 
+// TODO -> fetches image, but does not update the view
+
 import Combine // import PassthroughSubject
 import Foundation
 
@@ -13,18 +15,22 @@ class ImageLoader: ObservableObject {
     var didChange = PassthroughSubject<Data, Never>()
     var data = Data() {
         didSet {
-            didChange.send(data)
+            DispatchQueue.main.async {
+                self.didChange.send(self.data)
+            }
         }
     }
 
     init(urlString:String) {
-        guard let url = URL(string: urlString) else { return }
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        guard let url = URL(string: urlString) else {
+            print("Error fetching image..")
+            return
+        }
+        URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else { return }
             DispatchQueue.main.async {
                 self.data = data
             }
-        }
-        task.resume()
+        }.resume()
     }
 }
