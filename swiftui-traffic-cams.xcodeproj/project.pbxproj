@@ -16,6 +16,7 @@
 		EE89E34423F6AC3400BEB6C3 /* swiftui_traffic_camsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E34323F6AC3400BEB6C3 /* swiftui_traffic_camsTests.swift */; };
 		EE89E34F23F6AC3400BEB6C3 /* swiftui_traffic_camsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E34E23F6AC3400BEB6C3 /* swiftui_traffic_camsUITests.swift */; };
 		EE89E35D23F6AEBE00BEB6C3 /* CameraData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E35C23F6AEBE00BEB6C3 /* CameraData.swift */; };
+		EE89E36123F6BAF800BEB6C3 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E36023F6BAF800BEB6C3 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		EE89E34E23F6AC3400BEB6C3 /* swiftui_traffic_camsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_traffic_camsUITests.swift; sourceTree = "<group>"; };
 		EE89E35023F6AC3400BEB6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE89E35C23F6AEBE00BEB6C3 /* CameraData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraData.swift; sourceTree = "<group>"; };
+		EE89E36023F6BAF800BEB6C3 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				EE89E32C23F6AC3300BEB6C3 /* AppDelegate.swift */,
 				EE89E32E23F6AC3300BEB6C3 /* SceneDelegate.swift */,
 				EE89E33023F6AC3300BEB6C3 /* ContentView.swift */,
+				EE89E36023F6BAF800BEB6C3 /* ImageLoader.swift */,
 				EE89E33223F6AC3400BEB6C3 /* Assets.xcassets */,
 				EE89E33723F6AC3400BEB6C3 /* LaunchScreen.storyboard */,
 				EE89E33A23F6AC3400BEB6C3 /* Info.plist */,
@@ -272,6 +275,7 @@
 			files = (
 				EE89E32D23F6AC3300BEB6C3 /* AppDelegate.swift in Sources */,
 				EE89E32F23F6AC3300BEB6C3 /* SceneDelegate.swift in Sources */,
+				EE89E36123F6BAF800BEB6C3 /* ImageLoader.swift in Sources */,
 				EE89E35D23F6AEBE00BEB6C3 /* CameraData.swift in Sources */,
 				EE89E33123F6AC3300BEB6C3 /* ContentView.swift in Sources */,
 			);

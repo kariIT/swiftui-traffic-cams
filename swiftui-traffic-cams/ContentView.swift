@@ -7,6 +7,9 @@
 //
 
 import SwiftUI
+import Foundation
+import UIKit
+import Combine
 
 struct ContentView: View {
     
@@ -18,7 +21,9 @@ struct ContentView: View {
         ZStack {
             VStack {
                 Text("Hello World")
-                Text("Data: \(cameraData.cameraStations?[0].cameraPresets?[0].imageUrl ?? "no data")")
+                ImageView(withURL: cameraData.cameraStations?[0].cameraPresets?[0].imageUrl ?? "xyeet")
+                
+                Text("Image: \(cameraData.cameraStations?[0].cameraPresets?[0].imageUrl ?? "no data")")
             }
         }.onAppear(perform: loadData)
         
@@ -26,7 +31,7 @@ struct ContentView: View {
     }
     
     func loadData() {
-        guard let url = URL(string: "https://tie.digitraffic.fi/api/v1/data/camera-data")
+        guard let url = URL(string: "https://tie.digitraffic.fi/api/v1/data/camera-data/C01502")
         else {
             print("loading data failed..")
             return
@@ -56,6 +61,26 @@ struct ContentView: View {
                 print("Error decoding JSON: \(error)")
             }
             }).resume()
+    }
+    
+    struct ImageView: View {
+        @ObservedObject var imageLoader: ImageLoader
+        @State var image:UIImage = UIImage()
+
+        init(withURL url:String) {
+            imageLoader = ImageLoader(urlString:url)
+        }
+
+        var body: some View {
+            VStack {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width:100, height:100)
+            }.onReceive(imageLoader.didChange) { data in
+                self.image = UIImage(data: data) ?? UIImage()
+            }
+        }
     }
 }
 
