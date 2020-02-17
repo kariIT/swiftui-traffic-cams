@@ -71,7 +71,7 @@
         <true/>
         <key>NSExceptionDomains</key>
         <dict>
-            <key>example.com</key>
+            <key>tie.digitraffic.fi</key>
             <dict>
                 <key>NSExceptionAllowsInsecureHTTPLoads</key>
                 <true/>

@@ -31,11 +31,11 @@ struct MainView: View {
         print("MAKELIST")
         let count = (cameraData.cameraStations?.count ?? 0)
         print("COUNT: \(count)")
-        for i in 0...10 { //count.hashValue
-            print("Index: \(i) Camera: ", cameraData.cameraStations?[i].id ?? "null")
-            // for i in 0...cameraData.cameraStations?[i].cameraPresets?.count {
-                
-           // }
+
+        for station in cameraData.cameraStations! {
+            for preset in station.cameraPresets! {
+                print(preset.presentationName)
+            }
         }
     }
     
