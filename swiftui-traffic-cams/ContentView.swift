@@ -38,7 +38,7 @@ struct ContentView: View {
     
     func searchCamera() {
         print("search: \($search)")
-        loadData()
+        // loadData()
     }
     
     func loadData() {
