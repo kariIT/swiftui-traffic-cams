@@ -15,7 +15,6 @@ struct MainView: View {
     @State private var searchID = ""
     @State private var presets = [CameraPreset]()
     @State private var stations = [CameraStation]()
-    @State private var test = [1, 2, 3, 4, 5]
     
     var body: some View {
         ZStack (alignment: .topLeading) {
@@ -25,47 +24,41 @@ struct MainView: View {
                 }).textFieldStyle(RoundedBorderTextFieldStyle())
                 
               NavigationView {
-                    if (presets.count != 0) {
-                        ForEach(presets, id: \.self) { preset in
-                            VStack {
-                                NavigationLink(destination: ContentView()) {
-                                    Text(preset.presentationName ?? "hmmM")
-                                }
-                                
-                                Text(String(self.presets.count))
-                                Text(String(preset.id ?? "id"))
+                    VStack {
+                        if (presets.count != 0) {
+                            ForEach(presets, id: \.self) { preset in
+                                VStack {
+                                    NavigationLink(destination: ContentView()) {
+                                        Text(preset.presentationName ?? "hmmM")
+                                    }
+                                    
+                                    Text(String(self.presets.count))
+                                    Text(String(preset.id ?? "id"))
+                                }.padding()
                             }
+                        } else {
+                            Text("Wait")
                         }
-                    } else {
-                        Text("Wait")
                     }
-                    
                 }
                 
                  NavigationView {
-                 VStack {
-                    if (stations.count != 0) {
-                        ForEach(self.stations, id: \.self) { station in
-                            VStack {
-                                NavigationLink(destination: ContentView()) {
-                                    Text(station.id ?? "not found")
+                     VStack {
+                        if (stations.count != 0) {
+                            ForEach(self.stations, id: \.self) { station in
+                                VStack {
+                                    NavigationLink(destination: ContentView()) {
+                                        Text(station.id ?? "not found")
+                                    }
+                                    
+                                    Text("count: \(self.stations.count)")
+                                    Text("Station id: \(station.id ?? "id")")
                                 }
-                                
-                                Text("count: \(self.stations.count)")
-                                Text("Station id: \(station.id ?? "id")")
                             }
+                        } else {
+                            Text("Wait")
                         }
-                    } else {
-                        Text("Wait")
-                    }
-                 }
-                    
-                }
-                
-                VStack {
-                    ForEach(self.test, id: \.self) { num in
-                                Text("Count \(self.test.count)")
-                    }
+                     }
                 }
                 
                 Spacer()
