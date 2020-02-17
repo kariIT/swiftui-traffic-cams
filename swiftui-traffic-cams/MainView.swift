@@ -15,6 +15,7 @@ struct MainView: View {
     @State private var searchID = ""
     @State private var presets = [CameraPreset]()
     @State private var stations = [CameraStation]()
+    @State private var test = [1, 2, 3, 4, 5]
     
     var body: some View {
         ZStack (alignment: .topLeading) {
@@ -22,7 +23,8 @@ struct MainView: View {
                 TextField("Search for camera", text: $searchID, onCommit: {
                     self.searchCameraById()
                 }).textFieldStyle(RoundedBorderTextFieldStyle())
-              /* NavigationView {
+                
+              NavigationView {
                     if (presets.count != 0) {
                         ForEach(presets, id: \.self) { preset in
                             VStack {
@@ -38,11 +40,12 @@ struct MainView: View {
                         Text("Wait")
                     }
                     
-                } */
+                }
                 
                  NavigationView {
+                 VStack {
                     if (stations.count != 0) {
-                        ForEach(stations, id: \.self.id) { station in
+                        ForEach(self.stations, id: \.self) { station in
                             VStack {
                                 NavigationLink(destination: ContentView()) {
                                     Text(station.id ?? "not found")
@@ -55,7 +58,14 @@ struct MainView: View {
                     } else {
                         Text("Wait")
                     }
+                 }
                     
+                }
+                
+                VStack {
+                    ForEach(self.test, id: \.self) { num in
+                                Text("Count \(self.test.count)")
+                    }
                 }
                 
                 Spacer()
@@ -128,8 +138,8 @@ struct MainView_Previews: PreviewProvider {
     }
 }
 
-extension String: Identifiable {
+/* extension String: Identifiable {
     public var id: String {
         return self
     }
-}
+} */
