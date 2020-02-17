@@ -14,26 +14,37 @@ import Combine
 struct ContentView: View {
     
     @State private var cameraData = CameraData()
+    @State private var search = "C01504"
     
     
     var body: some View {
         
         ZStack {
             VStack {
-                Text("Hello World")
-                ImageView(withURL: cameraData.cameraStations?[0].cameraPresets?[0].imageUrl ?? "https://weathercam.digitraffic.fi/C0150200.jpg")
+                TextField("Search for camera", text: $search, onCommit: { self.searchCamera() }).textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                Text("Image: \(cameraData.cameraStations?[0].cameraPresets?[0].imageUrl ?? "no data")")
+                Text("Traffic cams")
+
+                
+                
+                ImageView(withURL: cameraData.cameraStations?[0].cameraPresets?[0].imageUrl ?? "https://upload.wikimedia.org/wikipedia/fi/4/4f/Cheek_-_Kuka_sä_oot2.jpg")
+                
+                Text("Image: \(cameraData.cameraStations?[0].cameraPresets?[0].imageUrl ?? "loading..")")
             }
         }.onAppear(perform: loadData)
         
 
     }
     
+    func searchCamera() {
+        print("search: \($search)")
+    }
+    
     func loadData() {
-        guard let url = URL(string: "https://tie.digitraffic.fi/api/v1/data/camera-data/C01502")
+        guard let url = URL(string: "https://tie.digitraffic.fi/api/v1/data/camera-data/\($search.wrappedValue)")
         else {
             print("loading data failed..")
+            print("URL: https://tie.digitraffic.fi/api/v1/data/camera-data\($search)")
             return
         }
         
