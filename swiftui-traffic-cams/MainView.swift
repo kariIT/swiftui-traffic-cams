@@ -7,11 +7,14 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct MainView: View {
     
     @State private var cameraData = CameraData()
     @State private var searchID = ""
+    @State private var presets = [CameraPreset]()
+    @State private var stations = [CameraStation]()
     
     var body: some View {
         ZStack (alignment: .topLeading) {
@@ -19,6 +22,41 @@ struct MainView: View {
                 TextField("Search for camera", text: $searchID, onCommit: {
                     self.searchCameraById()
                 }).textFieldStyle(RoundedBorderTextFieldStyle())
+              /* NavigationView {
+                    if (presets.count != 0) {
+                        ForEach(presets, id: \.self) { preset in
+                            VStack {
+                                NavigationLink(destination: ContentView()) {
+                                    Text(preset.presentationName ?? "hmmM")
+                                }
+                                
+                                Text(String(self.presets.count))
+                                Text(String(preset.id ?? "id"))
+                            }
+                        }
+                    } else {
+                        Text("Wait")
+                    }
+                    
+                } */
+                
+                 NavigationView {
+                    if (stations.count != 0) {
+                        ForEach(stations, id: \.self.id) { station in
+                            VStack {
+                                NavigationLink(destination: ContentView()) {
+                                    Text(station.id ?? "not found")
+                                }
+                                
+                                Text("count: \(self.stations.count)")
+                                Text("Station id: \(station.id ?? "id")")
+                            }
+                        }
+                    } else {
+                        Text("Wait")
+                    }
+                    
+                }
                 
                 Spacer()
                 
@@ -33,11 +71,18 @@ struct MainView: View {
         print("COUNT: \(count)")
 
         for station in cameraData.cameraStations! {
+            self.stations.append(station)
             for preset in station.cameraPresets! {
-                print(preset.presentationName)
+                // print(preset.presentationName)
+                self.presets.append(preset)
             }
         }
+        
+        print("stations, \(self.stations.count):", self.stations[0])
+        print("presets, \(self.presets.count):", self.presets[0])
     }
+    
+    
     
     func searchCameraById() {
         print("ID: \($searchID)")
@@ -45,6 +90,8 @@ struct MainView: View {
     }
     
     func loadData() {
+        print("COUTNTNTNTNTNT: ", presets.count)
+        
         guard let url = URL(string: "https://tie.digitraffic.fi/api/v1/data/camera-data/\($searchID.wrappedValue)")
         else {
             print("loading data failed..")
@@ -78,5 +125,11 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+    }
+}
+
+extension String: Identifiable {
+    public var id: String {
+        return self
     }
 }

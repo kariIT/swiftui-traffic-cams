@@ -15,14 +15,14 @@ struct CameraData: Codable {
     var cameraStations: [CameraStation]?
 }
 
-struct CameraStation: Codable {
+struct CameraStation: Codable, Hashable {
     var id: String?
     var roadStationId: Int?
     var nearestWeatherStationId: Int?
     var cameraPresets: [CameraPreset]?
 }
 
-struct CameraPreset: Codable {
+struct CameraPreset: Codable, Hashable {
     var id: String?
     var presentationName: String?
     var imageUrl: String?

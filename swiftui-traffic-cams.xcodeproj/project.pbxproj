@@ -112,8 +112,8 @@
 				EE89E36023F6BAF800BEB6C3 /* ImageLoader.swift */,
 				EE89E33223F6AC3400BEB6C3 /* Assets.xcassets */,
 				EE89E33723F6AC3400BEB6C3 /* LaunchScreen.storyboard */,
-				EE89E33A23F6AC3400BEB6C3 /* Info.plist */,
 				EE89E33423F6AC3400BEB6C3 /* Preview Content */,
+				EE89E33A23F6AC3400BEB6C3 /* Info.plist */,
 				EE89E35C23F6AEBE00BEB6C3 /* CameraData.swift */,
 			);
 			path = "swiftui-traffic-cams";
