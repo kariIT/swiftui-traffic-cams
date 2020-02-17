@@ -38,6 +38,7 @@ struct ContentView: View {
     
     func searchCamera() {
         print("search: \($search)")
+        loadData()
     }
     
     func loadData() {
@@ -67,7 +68,7 @@ struct ContentView: View {
                     self.cameraData = json
                 }
                 
-                print("JSON data: ", json)
+                // print("JSON data: ", json)
             } catch {
                 print("Error decoding JSON: \(error)")
             }
