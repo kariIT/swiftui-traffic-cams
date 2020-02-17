@@ -21,7 +21,7 @@ struct ContentView: View {
         ZStack {
             VStack {
                 Text("Hello World")
-                ImageView(withURL: cameraData.cameraStations?[0].cameraPresets?[0].imageUrl ?? "https://img.ilcdn.fi/tWtO4J_P8uwbjrEBcW1VAmOG0Sk=/full-fit-in/2048x/img-s3.ilcdn.fi/80438c255ed6a375c4af5240276224de3f0678455918788cfcb7467b2a5a04e9.jpg")
+                ImageView(withURL: cameraData.cameraStations?[0].cameraPresets?[0].imageUrl ?? "https://weathercam.digitraffic.fi/C0150200.jpg")
                 
                 Text("Image: \(cameraData.cameraStations?[0].cameraPresets?[0].imageUrl ?? "no data")")
             }
@@ -63,26 +63,7 @@ struct ContentView: View {
             }).resume()
     }
     
-    struct ImageView: View {
-        @ObservedObject var imageLoader: ImageLoader
-        @State var image: UIImage = UIImage()
 
-        init(withURL url: String) {
-            imageLoader = ImageLoader(urlString:url)
-            print("ImageURL: \(url)")
-        }
-
-        var body: some View {
-            VStack {
-                Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    // .frame(width:100, height:100)
-            }.onReceive(imageLoader.didChange) { data in
-                self.image = UIImage(data: data) ?? UIImage()
-            }
-        }
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -10,15 +10,18 @@
 
 import Combine // import PassthroughSubject
 import Foundation
+import SwiftUI
 
-class ImageLoader: ObservableObject {
-    var didChange = PassthroughSubject<Data, Never>()
-    var data = Data() {
-        didSet {
+final class ImageLoader: ObservableObject {
+    
+    var willChange = PassthroughSubject<Data?, Never>()
+    var data: Data? = nil {
+        willSet {
             DispatchQueue.main.async {
-                self.didChange.send(self.data)
+                self.willChange.send(self.data)
             }
         }
+        
     }
 
     init(urlString:String) {
@@ -32,5 +35,27 @@ class ImageLoader: ObservableObject {
                 self.data = data
             }
         }.resume()
+    }
+}
+
+struct ImageView: View {
+    
+    @State var image: UIImage = UIImage()
+
+    init(withURL url: String) {
+        imageLoader = ImageLoader(urlString:url)
+        print("ImageURL: \(url)")
+    }
+
+    @ObservedObject private var imageLoader: ImageLoader
+    var body: some View {
+        VStack {
+            Image(uiImage: image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                // .frame(width:100, height:100)
+        }.onReceive(imageLoader.willChange) { data in
+            self.image = UIImage(data: data!) ?? UIImage()
+        }
     }
 }
