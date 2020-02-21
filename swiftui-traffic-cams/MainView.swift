@@ -7,12 +7,12 @@
 //
 
 import SwiftUI
-import UIKit
+
 
 struct MainView: View {
     
     @State private var cameraData = CameraData()
-    @State private var searchID = ""
+    @State private var searchID = "C01502"
     @State private var presets = [CameraPreset]()
     @State private var stations = [CameraStation]()
     
@@ -24,26 +24,23 @@ struct MainView: View {
                 }).textFieldStyle(RoundedBorderTextFieldStyle())
                 
               NavigationView {
+                ScrollView {
                     VStack {
                         if (presets.count != 0) {
                             ForEach(presets, id: \.self) { preset in
-                              //  VStack {
+                                HStack {
+                                    Image("placeholder_small")
+                                    // ImageView(withURL: preset.imageUrl ?? "use preset image as preview")
                                     NavigationLink(destination: ContentView(cameraPreset: preset)) {
-                                        HStack () {
-                                            Image("placeholder_small").resizable().frame(width: 30, height: 30)
-                                            Text(preset.presentationName ?? "hmmM")
-                                             Text(String(preset.id ?? "id"))
-                                        }
+                                        CameraPresetRowView(preset: preset)
                                     }
-                                    
-                                    // Text(String(self.presets.count))
-                                   
-                                // }.padding()
+                                }
                             }
                         } else {
                             Text("Wait")
                         }
                     }
+                }
                 }
                 
                 /* NavigationView {

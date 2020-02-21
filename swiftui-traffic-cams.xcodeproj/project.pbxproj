@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE49F41723FA87D700E27C88 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE49F41623FA87D700E27C88 /* MainView.swift */; };
+		EE7964B223FFBCA5001BFD5E /* CameraPresetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7964B123FFBCA5001BFD5E /* CameraPresetRowView.swift */; };
 		EE89E32D23F6AC3300BEB6C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E32C23F6AC3300BEB6C3 /* AppDelegate.swift */; };
 		EE89E32F23F6AC3300BEB6C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E32E23F6AC3300BEB6C3 /* SceneDelegate.swift */; };
 		EE89E33123F6AC3300BEB6C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89E33023F6AC3300BEB6C3 /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		EE49F41623FA87D700E27C88 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		EE7964B123FFBCA5001BFD5E /* CameraPresetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPresetRowView.swift; sourceTree = "<group>"; };
 		EE89E32923F6AC3300BEB6C3 /* swiftui-traffic-cams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftui-traffic-cams.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE89E32C23F6AC3300BEB6C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE89E32E23F6AC3300BEB6C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				EE89E32E23F6AC3300BEB6C3 /* SceneDelegate.swift */,
 				EE89E33023F6AC3300BEB6C3 /* ContentView.swift */,
 				EE49F41623FA87D700E27C88 /* MainView.swift */,
+				EE7964B123FFBCA5001BFD5E /* CameraPresetRowView.swift */,
 				EE89E36023F6BAF800BEB6C3 /* ImageLoader.swift */,
 				EE89E33223F6AC3400BEB6C3 /* Assets.xcassets */,
 				EE89E33723F6AC3400BEB6C3 /* LaunchScreen.storyboard */,
@@ -282,6 +285,7 @@
 				EE89E36123F6BAF800BEB6C3 /* ImageLoader.swift in Sources */,
 				EE89E35D23F6AEBE00BEB6C3 /* CameraData.swift in Sources */,
 				EE89E33123F6AC3300BEB6C3 /* ContentView.swift in Sources */,
+				EE7964B223FFBCA5001BFD5E /* CameraPresetRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
