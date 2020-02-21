@@ -29,11 +29,11 @@ struct MainView: View {
                         if (presets.count != 0) {
                             ForEach(presets, id: \.self) { preset in
                                 HStack {
-                                    Image("placeholder_small")
+                                    // Image("placeholder_small")
                                     // ImageView(withURL: preset.imageUrl ?? "use preset image as preview")
                                     NavigationLink(destination: ContentView(cameraPreset: preset)) {
                                         CameraPresetRowView(preset: preset)
-                                    }
+                                    }.buttonStyle(PlainButtonStyle())
                                 }
                             }
                         } else {
