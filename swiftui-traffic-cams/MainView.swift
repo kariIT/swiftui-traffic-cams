@@ -22,47 +22,72 @@ struct MainView: View {
     var body: some View {
         ZStack (alignment: .topLeading) {
             VStack {
-                TextField("Search for a station, f.e. C01502", text: $searchID, onCommit: {
-                    self.searchCameraById()
-                }).textFieldStyle(RoundedBorderTextFieldStyle())
                 
-              NavigationView {
-                if (contentViewActive) {
-                    ContentView(cameraPreset: searchPreset)
-                } else {
-                        ScrollView {
-                            ZStack (alignment: .topLeading) {
-                                VStack (alignment: .leading) {
-                                    if (self.drawlist == true) {
-                                        if (presets.count != 0) {
-                                            Text("Cameras").font(.headline)
-                                            ForEach(presets, id: \.self) { preset in
-                                                HStack {
-                                                    NavigationLink(destination: ContentView(cameraPreset: preset)) {
-                                                        CameraPresetRowView(preset: preset)
-                                                    }.buttonStyle(PlainButtonStyle())
+                NavigationView {
+                    VStack {
+                    TextField("Search for a station, f.e. C01502", text: $searchID, onCommit: {
+                        self.searchCameraById()
+                    }).textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+                    
+                    if (contentViewActive) {
+                        ContentView(cameraPreset: searchPreset)
+                    } else {
+                            ScrollView {
+                                ZStack (alignment: .top) {
+                                    VStack (alignment: .leading) {
+                                        if (self.drawlist == true) {
+                                            if (presets.count != 0) {
+                                                //Text("Cameras").font(.largeTitle)
+                                                ForEach(presets, id: \.self) { preset in
+                                                    HStack {
+                                                        NavigationLink(destination: ContentView(cameraPreset: preset)) {
+                                                            CameraPresetRowView(preset: preset)
+                                                        }.buttonStyle(PlainButtonStyle())
+                                                    }
                                                 }
                                             }
+                                        } else {
+                                            Button(action: self.makeList) {
+                                                Text("Get stations").padding(10).background(Color.blue).foregroundColor(Color.black)
+                                                .overlay(
+                                                    RoundedRectangle(cornerRadius: 4)
+                                                        .stroke(Color.black, lineWidth: 2)
+                                                )
+                                            }.edgesIgnoringSafeArea(.all)
                                         }
-                                    } else {
-                                        Button(action: self.makeList) {
-                                            Text("Get stations").padding(10).background(Color.blue).foregroundColor(Color.black)
-                                            .overlay(
-                                                RoundedRectangle(cornerRadius: 4)
-                                                    .stroke(Color.black, lineWidth: 2)
-                                            )
-                                        }.edgesIgnoringSafeArea(.all)
-                                    }
-                                }.padding()
+                                    }.padding()
+                                }
                             }
                         }
-                    }
+                        }.padding()
+                    .navigationBarTitle("Cameras")
                 }
-                  
-               // Spacer()
+               Spacer()
                 
             }.onAppear(perform: loadData)
-        }.padding()
+        }
+    }
+    
+    func prepareData() {
+        /* if cameraData exists, clear stations and presets before fetching them again */
+       if (cameraData.cameraStations != nil) {
+           print("makelist cameradata exists")
+           self.presets.removeAll()
+           self.stations.removeAll()
+           
+           // fetch stations and presets from data
+           for station in cameraData.cameraStations! {
+               print("station: " + station.id!)
+               self.stations.append(station)
+               
+               for preset in station.cameraPresets! {
+                   self.presets.append(preset)
+               }
+           }
+       } else {
+           print("makelist no data")
+       }
     }
     
     func makeList() {
@@ -141,8 +166,7 @@ struct MainView: View {
             do {
                 let json = try JSONDecoder().decode(CameraData.self, from: data!)
                 DispatchQueue.main.async { self.cameraData = json
-                    // print("async -> makelist()")
-                    // self.makeList()
+                    self.prepareData()
                 }
             } catch {
                 print("Error decoding JSON: \(error)")
