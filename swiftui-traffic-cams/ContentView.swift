@@ -19,11 +19,11 @@ struct ContentView: View {
         
         ZStack (alignment: .top) {
             VStack {
-                Text(cameraPreset.presentationName ?? "loading..")
+                Text(cameraPreset.presentationName ?? "loading..").font(.largeTitle)
 
                 ImageView(withURL: cameraPreset.imageUrl ?? "https://upload.wikimedia.org/wikipedia/fi/4/4f/Cheek_-_Kuka_sä_oot2.jpg")
                     .padding()
-                Text("Image: " + (cameraPreset.imageUrl ?? "loading.."))
+                Text((cameraPreset.imageUrl ?? "loading.."))
                 }
             Spacer()
             }

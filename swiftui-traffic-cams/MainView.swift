@@ -31,6 +31,9 @@ struct MainView: View {
                          }).textFieldStyle(RoundedBorderTextFieldStyle()).padding()
                         
                         if (contentViewActive) {
+                            Button(action: { self.contentViewActive = false }) {
+                                Text("Back")
+                            }.padding()
                             ContentView(cameraPreset: searchPreset)
                         } else {
                             ScrollView {
@@ -62,7 +65,6 @@ struct MainView: View {
                     }.border(Color.red)
                         
                     .navigationBarTitle("Cameras")
-                    Spacer()
                 }.border(Color.blue)
             }.onAppear(perform: loadData)
         }
