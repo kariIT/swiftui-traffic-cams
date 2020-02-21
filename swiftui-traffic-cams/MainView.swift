@@ -15,29 +15,36 @@ struct MainView: View {
     @State private var searchID = ""
     @State private var presets = [CameraPreset]()
     @State private var stations = [CameraStation]()
+    @State private var drawlist = false
     
     var body: some View {
         ZStack (alignment: .topLeading) {
             VStack {
-                TextField("Search for a station", text: $searchID, onCommit: {
+                TextField("Search for a station, f.e. C01502", text: $searchID, onCommit: {
                     self.searchCameraById()
                 }).textFieldStyle(RoundedBorderTextFieldStyle())
                 
               NavigationView {
                     ScrollView {
-                        VStack {
-                            if (presets.count != 0) {
-                                ForEach(presets, id: \.self) { preset in
-                                    HStack {
-                                        // Image("placeholder_small")
-                                        // ImageView(withURL: preset.imageUrl ?? "use preset image as preview")
-                                        NavigationLink(destination: ContentView(cameraPreset: preset)) {
-                                            CameraPresetRowView(preset: preset)
-                                        }.buttonStyle(PlainButtonStyle())
+                        ZStack (alignment: .topLeading) {
+                            VStack (alignment: .leading) {
+                                if (self.drawlist == true) {
+                                    if (presets.count != 0) {
+                                        Text("Cameras").font(.headline)
+                                        ForEach(presets, id: \.self) { preset in
+                                            HStack {
+                                                NavigationLink(destination: ContentView(cameraPreset: preset)) {
+                                                    CameraPresetRowView(preset: preset)
+                                                }.buttonStyle(PlainButtonStyle())
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    Text("Search for stations")
+                                    Button(action: self.makeList) {
+                                        Text("Get stations").padding().border(Color.black)
                                     }
                                 }
-                            } else {
-                                Text("Search for station")
                             }
                         }
                     }
@@ -45,15 +52,17 @@ struct MainView: View {
                   
                 Spacer()
                 
-            }// .onAppear(perform: loadData)
+            }.onAppear(perform: loadData)
         }.padding()
     }
     
     func makeList() {
         print("makelist called!")
+        
         /* if cameraData exists, clear stations and presets before fetching them again */
         if (cameraData.cameraStations != nil) {
             print("makelist cameradata exists")
+            self.drawlist = false
             self.presets.removeAll()
             self.stations.removeAll()
             
@@ -66,6 +75,8 @@ struct MainView: View {
                     self.presets.append(preset)
                 }
             }
+            
+            self.drawlist = true
         } else {
             print("makelist no data")
         }
@@ -100,16 +111,13 @@ struct MainView: View {
             do {
                 let json = try JSONDecoder().decode(CameraData.self, from: data!)
                 DispatchQueue.main.async { self.cameraData = json
-                    print("async -> makelist()")
-                    self.makeList()
+                    // print("async -> makelist()")
+                    // self.makeList()
                 }
             } catch {
                 print("Error decoding JSON: \(error)")
             }
             }).resume()
-        
-        // print("after -> making list..")
-        // self.makeList()
     }
 }
 
