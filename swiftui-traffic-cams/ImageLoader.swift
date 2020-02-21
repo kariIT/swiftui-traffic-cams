@@ -55,7 +55,7 @@ struct ImageView: View {
                 .aspectRatio(contentMode: .fit)
                 // .frame(width:100, height:100)
         }.onReceive(imageLoader.willChange) { data in
-            self.image = UIImage(data: data!) ?? UIImage()
+            self.image = UIImage(data: data!) ?? UIImage(named: "error")!
         }
     }
 }
