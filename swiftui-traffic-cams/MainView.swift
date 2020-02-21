@@ -27,14 +27,18 @@ struct MainView: View {
                     VStack {
                         if (presets.count != 0) {
                             ForEach(presets, id: \.self) { preset in
-                                VStack {
-                                    NavigationLink(destination: ContentView()) {
-                                        Text(preset.presentationName ?? "hmmM")
+                              //  VStack {
+                                    NavigationLink(destination: ContentView(cameraPreset: preset)) {
+                                        HStack () {
+                                            Image("placeholder_small").resizable().frame(width: 30, height: 30)
+                                            Text(preset.presentationName ?? "hmmM")
+                                             Text(String(preset.id ?? "id"))
+                                        }
                                     }
                                     
-                                    Text(String(self.presets.count))
-                                    Text(String(preset.id ?? "id"))
-                                }.padding()
+                                    // Text(String(self.presets.count))
+                                   
+                                // }.padding()
                             }
                         } else {
                             Text("Wait")

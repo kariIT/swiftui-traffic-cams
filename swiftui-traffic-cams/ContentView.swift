@@ -13,6 +13,8 @@ import Combine
 
 struct ContentView: View {
     
+    var cameraPreset: CameraPreset
+    
     @State private var cameraData = CameraData()
     @State private var search = "C01504"
     
@@ -20,23 +22,23 @@ struct ContentView: View {
     var body: some View {
         
         ZStack {
-            VStack {
-                TextField("Search for camera", text: $search, onCommit: { self.searchCamera() }).textFieldStyle(RoundedBorderTextFieldStyle())
+            /* VStack {
+                TextField("Search for camera", text: $search, onCommit: { self.searchCamera() }).textFieldStyle(RoundedBorderTextFieldStyle()) */
                 
-                Text("Traffic cams")
+            Text(cameraPreset.presentationName ?? "loading..")
 
                 
                 
-                ImageView(withURL: cameraData.cameraStations?[0].cameraPresets?[0].imageUrl ?? "https://upload.wikimedia.org/wikipedia/fi/4/4f/Cheek_-_Kuka_sä_oot2.jpg")
+                ImageView(withURL: cameraPreset.imageUrl ?? "https://upload.wikimedia.org/wikipedia/fi/4/4f/Cheek_-_Kuka_sä_oot2.jpg")
                 
-                Text("Image: \(cameraData.cameraStations?[0].cameraPresets?[0].imageUrl ?? "loading..")")
+                Text("Image: " + (cameraPreset.imageUrl ?? "loading.."))
             }
-        }.onAppear(perform: loadData)
+        }// .onAppear(perform: loadData)
         
 
-    }
+   }
     
-    func searchCamera() {
+   /* func searchCamera() {
         print("search: \($search)")
         // loadData()
     }
@@ -73,13 +75,13 @@ struct ContentView: View {
                 print("Error decoding JSON: \(error)")
             }
             }).resume()
-    }
+    } */
     
 
-}
+// }
 
-struct ContentView_Previews: PreviewProvider {
+/* struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(cameraPreset: CameraPreset)
     }
-}
+} */
