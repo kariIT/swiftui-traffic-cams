@@ -15,10 +15,8 @@ https://tie.digitraffic.fi/api/v1/data/camera-data
   <img src=https://github.com/kariIT/swiftui-traffic-cams/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-02-21%20at%2014.00.36.png width=250px>
 </p>
 
-ICONS
-
 <p float="left" >
-  error icon --> Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+  error icon -> Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 </p>
 <p float="left" >
   camera icon -> Icons made by <a href="https://www.flaticon.com/authors/phatplus" title="phatplus">phatplus</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
