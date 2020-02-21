@@ -42,7 +42,7 @@ struct MainView: View {
                     }
                 }
                 
-                 NavigationView {
+                /* NavigationView {
                      VStack {
                         if (stations.count != 0) {
                             ForEach(self.stations, id: \.self) { station in
@@ -59,7 +59,7 @@ struct MainView: View {
                             Text("Wait")
                         }
                      }
-                }
+                } */
                 
                 Spacer()
                 
@@ -73,16 +73,19 @@ struct MainView: View {
         let count = (cameraData.cameraStations?.count ?? 0)
         print("COUNT: \(count)")
 
-        for station in cameraData.cameraStations! {
-            self.stations.append(station)
-            for preset in station.cameraPresets! {
-                // print(preset.presentationName)
-                self.presets.append(preset)
+        if (cameraData.cameraStations != nil) {
+            for station in cameraData.cameraStations! {
+                self.stations.append(station)
+                for preset in station.cameraPresets! {
+                    // print(preset.presentationName)
+                    self.presets.append(preset)
+                }
             }
         }
         
-        print("stations, \(self.stations.count):", self.stations[0])
-        print("presets, \(self.presets.count):", self.presets[0])
+        
+        // print("stations, \(self.stations.count):", self.stations[0])
+        // print("presets, \(self.presets.count):", self.presets[0])
     }
     
     
