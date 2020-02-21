@@ -62,10 +62,10 @@ struct MainView: View {
                             }
                         }
                         Spacer()
-                    }.border(Color.red)
+                    }
                         
                     .navigationBarTitle("Cameras")
-                }.border(Color.blue)
+                }
             }.onAppear(perform: loadData)
         }
     }
