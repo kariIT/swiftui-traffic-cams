@@ -21,50 +21,49 @@ struct MainView: View {
     
     var body: some View {
         ZStack (alignment: .topLeading) {
-            VStack {
+            HStack (alignment: .top) {
                 
                 NavigationView {
-                    VStack {
-                    TextField("Search for a station, f.e. C01502", text: $searchID, onCommit: {
-                        self.searchCameraById()
-                    }).textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                    
-                    if (contentViewActive) {
-                        ContentView(cameraPreset: searchPreset)
-                    } else {
+                    VStack (alignment: .leading) {
+                        
+                        TextField("Search for a station, f.e. C01502", text: $searchID, onCommit: {
+                         self.searchCameraById()
+                         }).textFieldStyle(RoundedBorderTextFieldStyle()).padding()
+                        
+                        if (contentViewActive) {
+                            ContentView(cameraPreset: searchPreset)
+                        } else {
                             ScrollView {
-                                ZStack (alignment: .top) {
-                                    VStack (alignment: .leading) {
-                                        if (self.drawlist == true) {
-                                            if (presets.count != 0) {
-                                                //Text("Cameras").font(.largeTitle)
-                                                ForEach(presets, id: \.self) { preset in
-                                                    HStack {
-                                                        NavigationLink(destination: ContentView(cameraPreset: preset)) {
-                                                            CameraPresetRowView(preset: preset)
-                                                        }.buttonStyle(PlainButtonStyle())
-                                                    }
-                                                }
+                                VStack (alignment: .leading) {
+                                    if (self.drawlist == true) {
+                                        ForEach(presets, id: \.self) { preset in
+                                            HStack {
+                                                NavigationLink(destination: ContentView(cameraPreset: preset)) {
+                                                    CameraPresetRowView(preset: preset)
+                                                }.buttonStyle(PlainButtonStyle())
                                             }
-                                        } else {
-                                            Button(action: self.makeList) {
-                                                Text("Get stations").padding(10).background(Color.blue).foregroundColor(Color.black)
+                                        }
+                                    } else {
+                                        Button(action: self.makeList) {
+                                            Text("Get stations")
+                                                .padding(10)
+                                                .background(Color.blue)
+                                                .foregroundColor(Color.black)
                                                 .overlay(
                                                     RoundedRectangle(cornerRadius: 4)
                                                         .stroke(Color.black, lineWidth: 2)
-                                                )
-                                            }.edgesIgnoringSafeArea(.all)
+                                            )
                                         }
-                                    }.padding()
-                                }
+                                    }
+                                }.padding()
                             }
                         }
-                        }.padding()
+                        Spacer()
+                    }.border(Color.red)
+                        
                     .navigationBarTitle("Cameras")
-                }
-               Spacer()
-                
+                    Spacer()
+                }.border(Color.blue)
             }.onAppear(perform: loadData)
         }
     }
@@ -72,7 +71,7 @@ struct MainView: View {
     func prepareData() {
         /* if cameraData exists, clear stations and presets before fetching them again */
        if (cameraData.cameraStations != nil) {
-           print("makelist cameradata exists")
+           print("cameradata exists")
            self.presets.removeAll()
            self.stations.removeAll()
            
@@ -86,7 +85,7 @@ struct MainView: View {
                }
            }
        } else {
-           print("makelist no data")
+           print("no data")
        }
     }
     
@@ -139,9 +138,6 @@ struct MainView: View {
         } else {
             print("preset not found!")
         }
-        
-        
-        // loadData()
     }
     
     func loadData() {

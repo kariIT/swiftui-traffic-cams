@@ -17,7 +17,7 @@ struct ContentView: View {
     
     var body: some View {
         
-        ZStack {
+        ZStack (alignment: .top) {
             VStack {
                 Text(cameraPreset.presentationName ?? "loading..")
 
@@ -25,6 +25,7 @@ struct ContentView: View {
                     .padding()
                 Text("Image: " + (cameraPreset.imageUrl ?? "loading.."))
                 }
+            Spacer()
             }
         }
    }
