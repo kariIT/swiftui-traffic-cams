@@ -16,6 +16,8 @@ struct MainView: View {
     @State private var presets = [CameraPreset]()
     @State private var stations = [CameraStation]()
     @State private var drawlist = false
+    @State private var contentViewActive = false
+    @State private var searchPreset = CameraPreset()
     
     var body: some View {
         ZStack (alignment: .topLeading) {
@@ -25,32 +27,39 @@ struct MainView: View {
                 }).textFieldStyle(RoundedBorderTextFieldStyle())
                 
               NavigationView {
-                    ScrollView {
-                        ZStack (alignment: .topLeading) {
-                            VStack (alignment: .leading) {
-                                if (self.drawlist == true) {
-                                    if (presets.count != 0) {
-                                        Text("Cameras").font(.headline)
-                                        ForEach(presets, id: \.self) { preset in
-                                            HStack {
-                                                NavigationLink(destination: ContentView(cameraPreset: preset)) {
-                                                    CameraPresetRowView(preset: preset)
-                                                }.buttonStyle(PlainButtonStyle())
+                if (contentViewActive) {
+                    ContentView(cameraPreset: searchPreset)
+                } else {
+                        ScrollView {
+                            ZStack (alignment: .topLeading) {
+                                VStack (alignment: .leading) {
+                                    if (self.drawlist == true) {
+                                        if (presets.count != 0) {
+                                            Text("Cameras").font(.headline)
+                                            ForEach(presets, id: \.self) { preset in
+                                                HStack {
+                                                    NavigationLink(destination: ContentView(cameraPreset: preset)) {
+                                                        CameraPresetRowView(preset: preset)
+                                                    }.buttonStyle(PlainButtonStyle())
+                                                }
                                             }
                                         }
+                                    } else {
+                                        Button(action: self.makeList) {
+                                            Text("Get stations").padding(10).background(Color.blue).foregroundColor(Color.black)
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 4)
+                                                    .stroke(Color.black, lineWidth: 2)
+                                            )
+                                        }.edgesIgnoringSafeArea(.all)
                                     }
-                                } else {
-                                    Text("Search for stations")
-                                    Button(action: self.makeList) {
-                                        Text("Get stations").padding().border(Color.black)
-                                    }
-                                }
+                                }.padding()
                             }
                         }
                     }
                 }
                   
-                Spacer()
+               // Spacer()
                 
             }.onAppear(perform: loadData)
         }.padding()
@@ -85,8 +94,29 @@ struct MainView: View {
     
     
     func searchCameraById() {
+        var found = false
         print("ID: \($searchID)")
-        loadData()
+        if (presets.count != 0) {
+            for preset in presets {
+                if (searchID == preset.id) {
+                    found = true
+                    print(preset.presentationName ?? "not found")
+                    self.searchPreset = preset
+                    contentViewActive = true
+                }
+            }
+        } else {
+            print("no presets found")
+        }
+        
+        if (found) {
+            print("preset found!")
+        } else {
+            print("preset not found!")
+        }
+        
+        
+        // loadData()
     }
     
     func loadData() {
