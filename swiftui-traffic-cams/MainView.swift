@@ -99,14 +99,17 @@ struct MainView: View {
             
             do {
                 let json = try JSONDecoder().decode(CameraData.self, from: data!)
-                DispatchQueue.main.async { self.cameraData = json }
+                DispatchQueue.main.async { self.cameraData = json
+                    print("async -> makelist()")
+                    self.makeList()
+                }
             } catch {
                 print("Error decoding JSON: \(error)")
             }
             }).resume()
         
-        print("after -> making list..")
-        self.makeList()
+        // print("after -> making list..")
+        // self.makeList()
     }
 }
 
