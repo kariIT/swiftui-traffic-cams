@@ -24,23 +24,23 @@ struct MainView: View {
                 }).textFieldStyle(RoundedBorderTextFieldStyle())
                 
               NavigationView {
-                ScrollView {
-                    VStack {
-                        if (presets.count != 0) {
-                            ForEach(presets, id: \.self) { preset in
-                                HStack {
-                                    // Image("placeholder_small")
-                                    // ImageView(withURL: preset.imageUrl ?? "use preset image as preview")
-                                    NavigationLink(destination: ContentView(cameraPreset: preset)) {
-                                        CameraPresetRowView(preset: preset)
-                                    }.buttonStyle(PlainButtonStyle())
+                    ScrollView {
+                        VStack {
+                            if (presets.count != 0) {
+                                ForEach(presets, id: \.self) { preset in
+                                    HStack {
+                                        // Image("placeholder_small")
+                                        // ImageView(withURL: preset.imageUrl ?? "use preset image as preview")
+                                        NavigationLink(destination: ContentView(cameraPreset: preset)) {
+                                            CameraPresetRowView(preset: preset)
+                                        }.buttonStyle(PlainButtonStyle())
+                                    }
                                 }
+                            } else {
+                                Text("Wait")
                             }
-                        } else {
-                            Text("Wait")
                         }
                     }
-                }
                 }
                 
                 /* NavigationView {
@@ -70,23 +70,21 @@ struct MainView: View {
     
     func makeList() {
         loadData()
-        print("MAKELIST")
-        let count = (cameraData.cameraStations?.count ?? 0)
-        print("COUNT: \(count)")
 
+        /* if cameraData exists, clear stations and presets before fetching them again */
         if (cameraData.cameraStations != nil) {
+            self.presets.removeAll()
+            self.stations.removeAll()
+            
+            // fetch stations and presets from data
             for station in cameraData.cameraStations! {
                 self.stations.append(station)
+                
                 for preset in station.cameraPresets! {
-                    // print(preset.presentationName)
                     self.presets.append(preset)
                 }
             }
         }
-        
-        
-        // print("stations, \(self.stations.count):", self.stations[0])
-        // print("presets, \(self.presets.count):", self.presets[0])
     }
     
     
