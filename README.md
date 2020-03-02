@@ -4,7 +4,7 @@ Monitor digitraffic API weather cameras
 https://tie.digitraffic.fi/api/v1/data/camera-data
 
 <p float="left" >
-  <img src=https://github.com/kariIT/swiftui-traffic-cams/blob/master/demo.gif width=250px>
+  <img src=https://github.com/kariIT/swiftui-traffic-cams/blob/master/preview.gif width=250px>
 </p>
 
 <p float="left" >
