@@ -11,10 +11,13 @@ import SwiftUI
 struct CameraPresetRowView: View {
     var preset: CameraPreset
     var body: some View {
-        HStack {
-            Image("dome").resizable().frame(width: 30, height: 30)
-            Text(preset.presentationName ?? "presentation name not found")
-            Text(String(preset.id ?? "id"))
+        VStack (alignment: .leading) {
+            HStack {
+                Image("dome").resizable().frame(width: 30, height: 30)
+                Text(preset.presentationName ?? "presentation name not found")
+                // Text(String(preset.id ?? "id"))
+            }
+            Divider()
         }
     }
 }

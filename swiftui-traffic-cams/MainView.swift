@@ -15,7 +15,7 @@ struct MainView: View {
     @State private var searchID = ""
     @State private var presets = [CameraPreset]()
     @State private var stations = [CameraStation]()
-    @State private var drawlist = false
+    @State private var drawlist = true
     @State private var contentViewActive = false
     @State private var searchPreset = CameraPreset()
     
@@ -36,27 +36,12 @@ struct MainView: View {
                             }.padding()
                             ContentView(cameraPreset: searchPreset)
                         } else {
-                            ScrollView {
+                            ScrollView (showsIndicators: true) {
                                 VStack (alignment: .leading) {
-                                    if (self.drawlist == true) {
-                                        ForEach(presets, id: \.self) { preset in
-                                            HStack {
-                                                NavigationLink(destination: ContentView(cameraPreset: preset)) {
-                                                    CameraPresetRowView(preset: preset)
-                                                }.buttonStyle(PlainButtonStyle())
-                                            }
-                                        }
-                                    } else {
-                                        Button(action: self.makeList) {
-                                            Text("Get stations")
-                                                .padding(10)
-                                                .background(Color.blue)
-                                                .foregroundColor(Color.black)
-                                                .overlay(
-                                                    RoundedRectangle(cornerRadius: 4)
-                                                        .stroke(Color.black, lineWidth: 2)
-                                            )
-                                        }
+                                    ForEach(presets, id: \.self) { preset in
+                                        NavigationLink(destination: ContentView(cameraPreset: preset)) {
+                                            CameraPresetRowView(preset: preset)
+                                        }.buttonStyle(PlainButtonStyle())
                                     }
                                 }.padding()
                             }
@@ -71,19 +56,24 @@ struct MainView: View {
     }
     
     func prepareData() {
+        var i = 0
         /* if cameraData exists, clear stations and presets before fetching them again */
-       if (cameraData.cameraStations != nil) {
+        if (cameraData.cameraStations != nil) {
            print("cameradata exists")
            self.presets.removeAll()
            self.stations.removeAll()
-           
+        
            // fetch stations and presets from data
            for station in cameraData.cameraStations! {
-               print("station: " + station.id!)
                self.stations.append(station)
+            
+                if (i == 30) { break }
+                i += 1
                
                for preset in station.cameraPresets! {
-                   self.presets.append(preset)
+                   if (preset.presentationName != nil) {
+                       self.presets.append(preset)
+                   }
                }
            }
        } else {
@@ -92,29 +82,8 @@ struct MainView: View {
     }
     
     func makeList() {
-        print("makelist called!")
-        
-        /* if cameraData exists, clear stations and presets before fetching them again */
-        if (cameraData.cameraStations != nil) {
-            print("makelist cameradata exists")
-            self.drawlist = false
-            self.presets.removeAll()
-            self.stations.removeAll()
-            
-            // fetch stations and presets from data
-            for station in cameraData.cameraStations! {
-                print("station: " + station.id!)
-                self.stations.append(station)
-                
-                for preset in station.cameraPresets! {
-                    self.presets.append(preset)
-                }
-            }
-            
-            self.drawlist = true
-        } else {
-            print("makelist no data")
-        }
+        prepareData()
+        self.drawlist = true
     }
     
     

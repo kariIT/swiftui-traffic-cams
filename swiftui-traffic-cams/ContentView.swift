@@ -17,15 +17,15 @@ struct ContentView: View {
     
     var body: some View {
         
-        ZStack (alignment: .top) {
+        ZStack (alignment: .topLeading) {
             VStack {
-                Text(cameraPreset.presentationName ?? "loading..").font(.largeTitle)
+                Text(cameraPreset.presentationName ?? "loading..").font(.headline)
 
                 ImageView(withURL: cameraPreset.imageUrl ?? "https://upload.wikimedia.org/wikipedia/fi/4/4f/Cheek_-_Kuka_sä_oot2.jpg")
                     .padding()
                 Text((cameraPreset.imageUrl ?? "loading.."))
-                }
-            Spacer()
             }
-        }
-   }
+            Spacer()
+        }.edgesIgnoringSafeArea(.all)
+    }
+}
